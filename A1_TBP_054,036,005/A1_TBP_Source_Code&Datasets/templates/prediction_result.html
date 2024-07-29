@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <header class="header">
+    <h1>Prediction Result for {{ commodity }}</h1>
+    </header>
+
+    <div class="container prediction-results-container">
+        <!-- Display prediction results here -->
+        {{ forecast_df | safe }}
+    </div>
+
+    <!-- Add a button to visualize the forecasted prices -->
+    <form action="/visualize" method="post" class="form">
+        <input type="hidden" name="commodity" value="{{ commodity }}">
+        <input type="hidden" name="forecast_df" value="{{ forecast_df }}">
+        <div style="padding-left: 50%;">
+        <input type="submit" value="Visualize" class="btn">
+        </div>
+    </form>
+</body>
+</html>

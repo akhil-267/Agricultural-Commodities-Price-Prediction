@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Volumes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <header class="header">
+        <h1>Check Volumes Traded</h1>
+    </header>
+    <div class="container check-volumes-container">
+    <form action="/Volumes_traded" method="post" class="form">
+        <label for="forecast_period">Forecast Period (days):</label>
+        <input type="number" id="forecast_period" name="forecast_period"><br><br>
+        <label for="start_date">Starting Date (YYYY-MM-DD):</label>
+        <input type="text" id="start_date" name="start_date"><br><br>
+        <input type="submit" value="Check Volumes" class="btn">
+    </form>
+    </div>
+</body>
+</html>

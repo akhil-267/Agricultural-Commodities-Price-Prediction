@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commodity Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <header class="header">
+        <h1>Commodity Price Prediction</h1>
+    </header>
+    <div class="container prediction-results-container">
+    <form action="/select_prediction" method="post" class="form">
+        <input type="radio" id="predict_prices" name="prediction_type" value="prices">
+        <label for="predict_prices">Predict Prices of Commodities</label><br>
+        <input type="radio" id="check_volumes" name="prediction_type" value="volumes">
+        <label for="check_volumes">Check Volumes of Commodities Traded</label><br><br>
+        <input type="submit" value="Next" class="btn">
+    </form>
+    </div>
+</body>
+</html>
